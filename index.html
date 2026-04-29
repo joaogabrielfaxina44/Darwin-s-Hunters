@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin's Hunters | Evolution Lab</title>
+    <meta name="description" content="Simulador de comportamento autônomo baseado em Neuroevolução.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Dashboard UI Lateral -->
+        <div class="dashboard glass">
+            <h2>LABORATÓRIO</h2>
+            
+            <div class="kpi-container">
+                <div class="kpi">
+                    <span class="label">GERAÇÃO</span>
+                    <span class="value" id="generation">1</span>
+                </div>
+                <div class="kpi">
+                    <span class="label">MELHOR FITNESS</span>
+                    <span class="value" id="bestFitness">0.0</span>
+                </div>
+                <div class="kpi">
+                    <span class="label">MÉDIA FITNESS</span>
+                    <span class="value" id="avgFitness">0.0</span>
+                </div>
+                <div class="kpi">
+                    <span class="label">SOBREVIVÊNCIA</span>
+                    <span class="value" id="survivalRate">100%</span>
+                </div>
+            </div>
+
+            <div class="brain-viewer">
+                <span class="label">REDE NEURAL (MELHOR)</span>
+                <canvas id="brainCanvas" width="250" height="200"></canvas>
+            </div>
+
+            <div class="controls">
+                <button id="speedBtn">1x Speed</button>
+                <button id="visionBtn">Vision: ON</button>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="overlay glass">
+            <h1>DARWIN'S HUNTERS</h1>
+            <p>Os agentes aprenderão a te caçar através da seleção natural.</p>
+            <p>Sobreviva guiando a isca (mouse).</p>
+            <button id="startBtn">INICIAR EVOLUÇÃO</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="antigravity.js"></script>
+    <script src="neural.js"></script>
+    <script src="genetics.js"></script>
+    <script src="hunter.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
